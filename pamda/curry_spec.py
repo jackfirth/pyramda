@@ -1,6 +1,6 @@
 from collections import namedtuple
-from functools import partial
 from inspect import getargspec
+from .private.min_index import min_index
 
 CurrySpec = namedtuple('CurrySpec', 'arg_names arg_defaults')
 ArgValues = namedtuple('ArgValues', 'args kwargs')
@@ -71,18 +71,6 @@ def make_func_curry_spec(f):
 
 def has_extra_kwargs(curry_spec, kwargs):
     return len(kwargs.keys() - curry_spec.arg_names) > 0
-
-
-def index_of(lst, item):
-    return lst.index(item)
-
-
-def indices(lst, items):
-    return map(partial(index_of, lst), items)
-
-
-def min_index(lst, items):
-    return min(indices(lst, items))
 
 
 def arg_values_invalid(curry_spec, arg_values):
