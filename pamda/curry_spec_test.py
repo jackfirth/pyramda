@@ -1,5 +1,6 @@
 from functools import partial, wraps
 from .curry_spec import *
+from .private.assert_equal import assert_equal, assert_not_equal
 from .private.assert_pred import assert_pred, true_case, false_case
 from .private.assert_domain import assert_not_in_domain
 
@@ -13,7 +14,11 @@ def curry_spec_creation_test():
 
 
 def num_args_test():
-    assert num_args(ArgValues([1, 2], {'foo': 5, 'bar': 7, 'baz': 10})) == 5
+    two_posn_three_kwarg_arg_values = ArgValues(
+        [1, 2],
+        {'foo': 5, 'bar': 7, 'baz': 10}
+    )
+    assert_equal(num_args(two_posn_three_kwarg_arg_values), 5)
 
 
 def args_overlap_test():
@@ -26,4 +31,11 @@ def f(x, y, z=3):
 
 def make_func_curry_spec_test():
     f_spec = make_func_curry_spec(f)
-    assert f_spec == CurrySpec(['x', 'y', 'z'], {'z': 3})
+    assert_equal(f_spec, CurrySpec(['x', 'y', 'z'], {'z': 3}))
+
+
+def remove_args_from_curry_spec_test():
+    f_spec = make_func_curry_spec(f)
+    arg_values = ArgValues([1], {'z': 10})
+    removed_spec = remove_args_from_curry_spec(f_spec, arg_values)
+    assert_equal(removed_spec, CurrySpec(['y', 'z'], {'z': 10}))

@@ -1,6 +1,7 @@
 from collections import namedtuple
 from inspect import getargspec
 from .private.min_index import min_index
+from .private.accepts_varargs import accepts_varargs
 
 CurrySpec = namedtuple('CurrySpec', 'arg_names arg_defaults')
 ArgValues = namedtuple('ArgValues', 'args kwargs')
@@ -42,14 +43,6 @@ def dict_overlap(dict1, dict2):
     return len(dict1.keys() & dict2.keys()) > 0
 
 
-def argspec_has_varargs(argspec):
-    return argspec.varargs is not None or argspec.keywords is not None
-
-
-def func_accepts_varargs(f):
-    return argspec_has_varargs(getargspec(f))
-
-
 def func_arg_names(f):
     return getargspec(f).args
 
@@ -64,6 +57,35 @@ def func_arg_defaults(f):
 
 
 def make_func_curry_spec(f):
-    if func_accepts_varargs(f):
+    if accepts_varargs(f):
         raise CurrySpecVarargError(f)
     return CurrySpec(func_arg_names(f), func_arg_defaults(f))
+
+
+def arg_values_invalid(curry_spec, arg_values):
+    if not arg_values.kwargs:
+        return False
+    min_kwarg_index = min_index(curry_spec.arg_names, arg_values.kwargs.keys())
+    return min_kwarg_index < num_positional_args(arg_values)
+
+
+def check_arg_values_valid(curry_spec, arg_values):
+    if arg_values_invalid(curry_spec, arg_values):
+        template = "Keyword args {0} and positional args {1} overlap for " + \
+            "arg names {2}"
+        message = template.format(
+            arg_values.kwargs,
+            arg_values.args,
+            curry_spec.arg_names
+        )
+        raise ValueError(message)
+
+
+def remove_args_from_curry_spec(curry_spec, arg_values):
+    check_arg_values_valid(curry_spec, arg_values)
+    arg_names, arg_defaults = curry_spec
+    args, kwargs = arg_values
+    new_arg_defaults = arg_defaults.copy()
+    new_arg_defaults.update(kwargs)
+    new_arg_names = arg_names[len(args):]
+    return CurrySpec(new_arg_names, new_arg_defaults)

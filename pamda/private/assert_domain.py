@@ -26,16 +26,16 @@ class NotInDomainAssertionError(DomainAssertionError):
         super(NotInDomainAssertionError, self).__init__(False, f, domain_args)
 
 
-def assert_in_domain(f, *args):
+def assert_in_domain(f, *args, **kwargs):
     try:
-        f(*args)
+        f(*args, **kwargs)
     except ValueError:
         raise InDomainAssertionError(f, args)
 
 
-def assert_not_in_domain(f, *args):
+def assert_not_in_domain(f, *args, **kwargs):
     try:
-        f(*args)
+        f(*args, **kwargs)
         raise NotInDomainAssertionError(f, args)
     except ValueError:
         return
