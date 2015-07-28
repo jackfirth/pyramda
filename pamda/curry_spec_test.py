@@ -1,8 +1,12 @@
 from curry_spec import *
 
 
+def assert_isinstance(type, v):
+    assert isinstance(v, type)
+
+
 def curry_spec_creation_test():
-    assert CurrySpec(['x', 'y', 'z'] {'y': 5}) isinstance CurrySpec
+    assert_isinstance(CurrySpec, CurrySpec(['x', 'y', 'z'], {'y': 5}))
 
 
 def num_args_test():
