@@ -15,3 +15,10 @@ def num_args_test():
 
 def args_overlap_test():
     assert args_overlap(ArgValues([], {'foo': 1}), ArgValues([], {'foo': 10}))
+
+
+def make_func_curry_spec_test():
+    def f(x, y, z=3):
+        return x + y + z
+    f_spec = make_func_curry_spec(f)
+    assert f_spec == CurrySpec(['x', 'y', 'z'], {'z': 3})
