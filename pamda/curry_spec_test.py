@@ -1,7 +1,7 @@
 from functools import partial, wraps
 from .curry_spec import *
-from .assert_pred import assert_pred, true_case, false_case
-from .assert_domain import assert_not_in_domain
+from .private.assert_pred import assert_pred, true_case, false_case
+from .private.assert_domain import assert_not_in_domain
 
 
 def assert_isinstance(type, v):
