@@ -1,4 +1,5 @@
 from collections import namedtuple
+from functools import partial
 from inspect import getargspec
 
 CurrySpec = namedtuple('CurrySpec', 'arg_names arg_defaults')
@@ -15,6 +16,10 @@ class CurrySpecVarargError(ValueError):
 
 def num_args(arg_values):
     return len(arg_values.args) + len(arg_values.kwargs)
+
+
+def num_positional_args(arg_values):
+    return len(arg_values.args)
 
 
 def num_curry_spec_args(curry_spec):
@@ -68,7 +73,35 @@ def has_extra_kwargs(curry_spec, kwargs):
     return len(kwargs.keys() - curry_spec.arg_names) > 0
 
 
+def index_of(lst, item):
+    return lst.index(item)
+
+
+def indices(lst, items):
+    return map(partial(index_of, lst), items)
+
+
+def min_index(lst, items):
+    return min(indices(lst, items))
+
+
+def arg_values_invalid(curry_spec, arg_values):
+    if not arg_values.kwargs:
+        return False
+    min_kwarg_index = min_index(curry_spec.arg_names, arg_values.kwargs.keys())
+    return min_kwarg_index < num_positional_args(arg_values)
+
+
 def arg_values_fulfill_curry_spec(curry_spec, arg_values):
+    if arg_values_invalid(curry_spec, arg_values):
+        template = "Keyword args {0} and positional args {1} overlap for " + \
+            "arg names {2}"
+        message = template.format(
+            arg_values.kwargs,
+            arg_values.args,
+            curry_spec.arg_names
+        )
+        raise ValueError(message)
     if has_extra_kwargs(curry_spec, arg_values.kwargs):
         return False
 

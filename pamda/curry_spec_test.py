@@ -1,5 +1,7 @@
 from functools import partial, wraps
 from .curry_spec import *
+from .assert_pred import assert_pred, true_case, false_case
+from .assert_domain import assert_not_in_domain
 
 
 def assert_isinstance(type, v):
@@ -27,42 +29,6 @@ def make_func_curry_spec_test():
     assert f_spec == CurrySpec(['x', 'y', 'z'], {'z': 3})
 
 
-def true_case(v):
-    return (v, True)
-
-
-def false_case(v):
-    return (v, False)
-
-
-class PredicateCaseAssertionError(AssertionError):
-    def __init__(self, expected, pred, v):
-        name = pred.__name__
-        v_str = str(v)
-        message_template = "Expected predicate {0} to be {1} for input {2}"
-        message = message_template.format(name, expected, v_str)
-        super(PredicateCaseAssertionError, self).__init__(message)
-
-
-class PredicateFalseCaseAssertionError(PredicateCaseAssertionError):
-    def __init__(self, pred, v):
-        super(PredicateFalseCaseAssertionError, self).__init__(False, pred, v)
-
-
-class PredicateTrueCaseAssertionError(PredicateCaseAssertionError):
-    def __init__(self, pred, v):
-        super(PredicateTrueCaseAssertionError, self).__init__(True, pred, v)
-
-
-def assert_pred(pred, *cases):
-    for v, expected in cases:
-        pv = pred(v)
-        if pv and not expected:
-            raise PredicateFalseCaseAssertionError(pred, v)
-        if not pv and expected:
-            raise PredicateTrueCaseAssertionError(pred, v)
-
-
 def arg_values_fulfill_curry_spec_test():
     f_spec = make_func_curry_spec(f)
     arg_values_fulfill_f_spec = wraps(arg_values_fulfill_curry_spec)(
@@ -78,4 +44,8 @@ def arg_values_fulfill_curry_spec_test():
         false_case(ArgValues([1], {})),
         false_case(ArgValues([], {'x': 10})),
         false_case(ArgValues([1], {'z': 10}))
+    )
+    assert_not_in_domain(
+        arg_values_fulfill_f_spec,
+        ArgValues([1], {'x': 1})
     )
