@@ -1,4 +1,5 @@
-from .curry_spec import CurrySpec, check_arg_values_valid
+from .curry_spec import CurrySpec
+from .check_arg_values_valid import check_arg_values_valid
 
 
 def remove_args_from_curry_spec(curry_spec, arg_values):

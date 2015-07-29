@@ -4,8 +4,8 @@ from .curry_spec import \
     num_curry_spec_args, \
     num_curry_spec_default_args, \
     num_default_overriding_args, \
-    num_positional_args, \
-    check_arg_values_valid
+    num_positional_args
+from .check_arg_values_valid import check_arg_values_valid
 
 
 def has_extra_kwargs(curry_spec, kwargs):
