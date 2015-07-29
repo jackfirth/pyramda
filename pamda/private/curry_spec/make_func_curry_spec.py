@@ -3,6 +3,14 @@ from .curry_spec import CurrySpec, CurrySpecVarargError
 from ..accepts_varargs import accepts_varargs
 
 
+class CurrySpecVarargError(ValueError):
+    def __init__(self, f):
+        name = f.__name__
+        message_template = "Cannot curry var-arg or var-kwarg function {0}"
+        message = message_template.format(name)
+        super(CurrySpecVarargError, self).__init__(message)
+
+
 def func_arg_names(f):
     return getargspec(f).args
 

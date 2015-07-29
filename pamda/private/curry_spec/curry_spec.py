@@ -7,14 +7,6 @@ CurrySpec = namedtuple('CurrySpec', 'arg_names arg_defaults')
 ArgValues = namedtuple('ArgValues', 'args kwargs')
 
 
-class CurrySpecVarargError(ValueError):
-    def __init__(self, f):
-        name = f.__name__
-        message_template = "Cannot curry var-arg or var-kwarg function {0}"
-        message = message_template.format(name)
-        super(CurrySpecVarargError, self).__init__(message)
-
-
 def num_args(arg_values):
     return len(arg_values.args) + len(arg_values.kwargs)
 
