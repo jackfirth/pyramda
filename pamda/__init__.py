@@ -5,3 +5,4 @@ from .filter import filter
 from .getattr import getattr
 from .getitem import getitem
 from .compose import compose
+from .reduce import reduce
