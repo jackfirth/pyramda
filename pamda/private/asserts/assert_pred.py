@@ -19,7 +19,7 @@ class PredicateTrueCaseAssertionError(PredicateCaseAssertionError):
         super(PredicateTrueCaseAssertionError, self).__init__(True, pred, v)
 
 
-def assert_pred(pred, *cases):
+def assert_pred_cases(pred, *cases):
     for v, expected in cases:
         pv = pred(v)
         if pv and not expected:

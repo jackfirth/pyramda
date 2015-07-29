@@ -2,7 +2,7 @@ from functools import partial, wraps
 from .curry_spec_fulfill import *
 from .curry_spec import make_func_curry_spec, ArgValues
 from .private.asserts import \
-    assert_pred, \
+    assert_pred_cases, \
     true_case, \
     false_case, \
     assert_not_in_domain
@@ -17,7 +17,7 @@ def arg_values_fulfill_curry_spec_test():
     arg_values_fulfill_f_spec = wraps(arg_values_fulfill_curry_spec)(
         partial(arg_values_fulfill_curry_spec, f_spec)
     )
-    assert_pred(
+    assert_pred_cases(
         arg_values_fulfill_f_spec,
         true_case(ArgValues([1, 2, 3], {})),
         true_case(ArgValues([], {'x': 1, 'y': 2, 'z': 3})),
