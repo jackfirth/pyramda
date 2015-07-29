@@ -4,3 +4,4 @@ from .equal import equal
 from .filter import filter
 from .getattr import getattr
 from .getitem import getitem
+from .compose import compose
