@@ -35,14 +35,6 @@ def num_default_overriding_args(curry_spec, arg_values):
     return len(curry_spec.arg_defaults.keys() & arg_values.kwargs.keys())
 
 
-def args_overlap(arg_values1, arg_values2):
-    return dict_overlap(arg_values1.kwargs, arg_values2.kwargs)
-
-
-def dict_overlap(dict1, dict2):
-    return len(dict1.keys() & dict2.keys()) > 0
-
-
 def arg_values_invalid(curry_spec, arg_values):
     if not arg_values.kwargs:
         return False

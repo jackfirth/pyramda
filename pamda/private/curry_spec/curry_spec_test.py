@@ -22,10 +22,6 @@ def num_args_test():
     assert_equal(num_args(two_posn_three_kwarg_arg_values), 5)
 
 
-def args_overlap_test():
-    assert args_overlap(ArgValues([], {'foo': 1}), ArgValues([], {'foo': 10}))
-
-
 def f(x, y, z=3):
     return x + y + z
 
