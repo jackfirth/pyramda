@@ -1,6 +1,6 @@
 from .curry import *
 from .curry import CurrySpec
-from .private.assert_equal import assert_equal, assert_not_equal
+from .private.asserts import assert_equal, assert_not_equal
 
 
 def f(x, y, z=3):

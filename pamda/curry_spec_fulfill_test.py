@@ -1,8 +1,11 @@
 from functools import partial, wraps
 from .curry_spec_fulfill import *
 from .curry_spec import make_func_curry_spec, ArgValues
-from .private.assert_pred import assert_pred, true_case, false_case
-from .private.assert_domain import assert_not_in_domain
+from .private.asserts import \
+    assert_pred, \
+    true_case, \
+    false_case, \
+    assert_not_in_domain
 
 
 def f(x, y, z=3):
