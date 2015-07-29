@@ -1,5 +1,5 @@
 from functools import partial, wraps
-from .curry_spec_fulfill import *
+from .arg_values_fulfill_curry_spec import arg_values_fulfill_curry_spec
 from .curry_spec import ArgValues
 from .make_func_curry_spec import make_func_curry_spec
 from ..asserts import \
