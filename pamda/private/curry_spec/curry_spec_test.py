@@ -1,6 +1,6 @@
 from functools import partial, wraps
 from .curry_spec import *
-from .asserts import \
+from ..asserts import \
     assert_equal, \
     assert_not_in_domain
 

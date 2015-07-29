@@ -1,7 +1,7 @@
 from collections import namedtuple
 from inspect import getargspec
-from .min_index import min_index
-from .accepts_varargs import accepts_varargs
+from ..min_index import min_index
+from ..accepts_varargs import accepts_varargs
 
 CurrySpec = namedtuple('CurrySpec', 'arg_names arg_defaults')
 ArgValues = namedtuple('ArgValues', 'args kwargs')
