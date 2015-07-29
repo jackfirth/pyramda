@@ -1,4 +1,4 @@
-from .private.min_index import min_index
+from .min_index import min_index
 from .curry_spec import \
     num_args, \
     num_curry_spec_args, \

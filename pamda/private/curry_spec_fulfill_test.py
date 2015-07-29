@@ -1,7 +1,7 @@
 from functools import partial, wraps
 from .curry_spec_fulfill import *
 from .curry_spec import make_func_curry_spec, ArgValues
-from .private.asserts import \
+from .asserts import \
     assert_pred_cases, \
     true_case, \
     false_case, \
