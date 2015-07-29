@@ -18,7 +18,7 @@ def func_arg_names(f):
 def func_arg_defaults(f):
     argspec = getargspec(f)
     arg_names = argspec.args
-    default_arg_values = argspec.defaults
+    default_arg_values = argspec.defaults or []
     num_defaults = len(default_arg_values)
     default_arg_names = arg_names[-num_defaults:]
     return dict(zip(default_arg_names, default_arg_values))
