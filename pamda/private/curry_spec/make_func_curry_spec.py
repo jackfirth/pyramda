@@ -1,5 +1,5 @@
 from inspect import getargspec
-from .curry_spec import CurrySpec, CurrySpecVarargError
+from .curry_spec import CurrySpec
 from ..accepts_varargs import accepts_varargs
 
 
