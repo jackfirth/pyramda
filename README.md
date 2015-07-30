@@ -62,9 +62,12 @@ take :: Number -> [a] -> [a]
 Logic
 
 ```
+and_func :: Operation Boolean
 both :: Operation (Predicate a)
 complement :: Predicate a -> Predicate a
 either :: Operation (Predicate a)
+not_func :: Boolean -> Boolean
+or_func :: Operation Boolean
 ```
 
 Math
