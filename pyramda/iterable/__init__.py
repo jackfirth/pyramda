@@ -9,3 +9,4 @@ from .drop import drop
 from .filter import filter
 from .map import map
 from .reduce import reduce
+from .take import take
