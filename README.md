@@ -22,6 +22,13 @@ Relation a = a -> a -> Boolean
 Operation a = a -> a -> a
 ```
 
+Dictionary
+
+```
+getitem :: key : a -> Dictionary { key :: b | * } -> b
+keys :: Dictionary a b -> [a]
+```
+
 Function
 
 ```
@@ -81,6 +88,5 @@ Other
 
 ```
 getattr :: attr : String -> Object { attr :: a | * } -> a
-getitem :: key : k -> Collection { key :: v | * } -> v
 isinstance :: Class -> Predicate a
 ```
