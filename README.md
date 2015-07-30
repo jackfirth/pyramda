@@ -64,10 +64,15 @@ subtract :: Operation Number
 sum :: [Number] -> Number
 ```
 
+Relation
+
+```
+equals :: a -> b -> Boolean
+```
+
 Other
 
 ```
-equal :: a -> b -> Boolean
 getattr :: attr : String -> Object { attr :: a | * } -> a
 getitem :: key : k -> Collection { key :: v | * } -> v
 isinstance :: Class -> Predicate a

@@ -1,5 +1,5 @@
 from pyramda.function.curry import curry
-from pyramda.equals import equals
+from pyramda.relation.equals import equals
 from .any_satisfy import any_satisfy
 
 
