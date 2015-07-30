@@ -7,6 +7,7 @@ from .contains import contains
 from .contains_with import contains_with
 from .drop import drop
 from .filter import filter
+from .find import find
 from .map import map
 from .reduce import reduce
 from .take import take
