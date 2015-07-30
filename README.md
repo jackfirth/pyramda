@@ -20,7 +20,7 @@ equal :: a -> b -> Boolean
 filter :: (a -> Boolean) -> [a] -> [a]
 getattr :: attr:String -> Object { attr : a | * } -> a
 getitem :: key:k -> Collection { key : v | * } -> v
-isinstance :: Type -> a -> Boolean
+isinstance :: Class -> a -> Boolean
 map :: (a -> b) -> [a] -> [b]
 reduce :: (a -> b -> b) -> a -> [b] -> a
 ```
