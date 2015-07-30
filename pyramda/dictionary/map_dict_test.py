@@ -1,7 +1,7 @@
 from .map_dict import map_dict
 from .values import values
 from pyramda.math import inc
-from pyramda.private.asserts import assert_iterables_equal
+from pyramda.private.asserts import assert_dicts_equal
 
 
 test_dict = {
@@ -10,7 +10,12 @@ test_dict = {
     "c": 3
 }
 
+expected_dict = {
+    "a": 2,
+    "b": 3,
+    "c": 4
+}
+
 
 def map_dict_test():
-    incd_dict = map_dict(inc, test_dict)
-    assert_iterables_equal(set(values(incd_dict)), set([2, 4, 3]))
+    assert_dicts_equal(map_dict(inc, test_dict), expected_dict)
