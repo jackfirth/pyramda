@@ -1,4 +1,5 @@
 from .add import add
+from .apply import apply
 from .compose import compose
 from .curry import curry
 from .equal import equal
