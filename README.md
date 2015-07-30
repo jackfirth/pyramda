@@ -96,9 +96,11 @@ Relation
 
 ```
 equals :: a -> b -> Boolean
+greater :: Ord a => Operation a
 gt :: Ord a => Relation a
 gte :: Ord a => Relation a
 identical :: Relation a
+lesser :: Ord a => Operation a
 lt :: Ord a => Relation a
 lte :: Ord a => Relation a
 max :: Ord a => Reduction a
