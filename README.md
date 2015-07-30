@@ -68,6 +68,7 @@ any_pass :: [Predicate a] -> Predicate a
 both :: Operation (Predicate a)
 complement :: Predicate a -> Predicate a
 either :: Operation (Predicate a)
+if_else :: Predicate a -> Operation (a -> a)
 not_func :: Boolean -> Boolean
 or_func :: Operation Boolean
 ```

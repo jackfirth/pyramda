@@ -4,5 +4,6 @@ from .any_pass import any_pass
 from .both import both
 from .complement import complement
 from .either import either
+from .if_else import if_else
 from .not_func import not_func
 from .or_func import or_func
