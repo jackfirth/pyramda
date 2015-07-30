@@ -70,6 +70,7 @@ Relation
 equals :: a -> b -> Boolean
 gt :: Ord a => Relation a
 gte :: Ord a => Relation a
+identical :: Relation a
 lt :: Ord a => Relation a
 lte :: Ord a => Relation a
 ```
