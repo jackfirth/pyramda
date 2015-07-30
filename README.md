@@ -26,6 +26,7 @@ Iterable
 
 ```
 all_satisfy :: Predicate a -> [a] -> Boolean
+any_satisfy :: Predicate a -> [a] -> Boolean
 filter :: Predicate a -> [a] -> [a]
 map :: (a -> b) -> [a] -> [b]
 reduce :: (a -> b -> b) -> a -> [b] -> a
