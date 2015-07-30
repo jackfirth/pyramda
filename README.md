@@ -27,6 +27,8 @@ Dictionary
 ```
 getitem :: key : a -> Dictionary { key :: b | * } -> b
 keys :: Dictionary a b -> [a]
+map_dict :: (b -> c) -> Dictionary a b -> Dictionary a c
+values :: Dictionary a b -> [b]
 ```
 
 Function
