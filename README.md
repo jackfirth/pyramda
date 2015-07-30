@@ -62,7 +62,9 @@ take :: Number -> [a] -> [a]
 Logic
 
 ```
+all_pass :: [Predicate a] -> Predicate a
 and_func :: Operation Boolean
+any_pass :: [Predicate a] -> Predicate a
 both :: Operation (Predicate a)
 complement :: Predicate a -> Predicate a
 either :: Operation (Predicate a)
