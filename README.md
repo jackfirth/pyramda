@@ -2,7 +2,7 @@
 Python package supporting heavy functional programming through currying and function composition. Translation of the Ramda library from javascript to python.
 
 ```python
->>> from pamda import map
+>>> from pyramda import map
 >>> map(lambda x: x + 1, [1, 2, 3]
 [2, 3, 4]
 >>> add1Each = map(lambda x: x + 1)
