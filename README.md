@@ -25,11 +25,12 @@ curry :: (a b ... -> z) -> a -> b -> ... -> z
 Iterable
 
 ```
-all_satisfy :: Predicate a -> [a] -> Boolean
-any_satisfy :: Predicate a -> [a] -> Boolean
+all_satisfy :: Predicate a -> Predicate [a]
+any_satisfy :: Predicate a -> Predicate [a]
 chain :: (a -> [b]) -> [a] -> [b]
 concat :: [a] -> [a] -> [a]
 cons :: a -> [a] -> [a]
+contains_with :: Relation a -> a -> Predicate [a]
 filter :: Predicate a -> [a] -> [a]
 map :: (a -> b) -> [a] -> [b]
 reduce :: (a -> b -> b) -> a -> [b] -> a
@@ -64,4 +65,5 @@ Type Synonyms
 
 ```
 Predicate a = a -> Boolean
+Relation a = a -> a -> Boolean
 ```
