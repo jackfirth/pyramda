@@ -55,3 +55,9 @@ getattr :: attr : String -> Object { attr :: a | * } -> a
 getitem :: key : k -> Collection { key :: v | * } -> v
 isinstance :: Class -> Predicate a
 ```
+
+Type Synonyms
+
+```
+Predicate a = a -> Boolean
+```
