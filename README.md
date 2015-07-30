@@ -14,6 +14,14 @@ Python package supporting heavy functional programming through currying and func
 
 ### Provided functions
 
+Type Synonyms
+
+```
+Predicate a = a -> Boolean
+Relation a = a -> a -> Boolean
+Operation a = a -> a -> a
+```
+
 Function
 
 ```
@@ -28,7 +36,7 @@ Iterable
 all_satisfy :: Predicate a -> Predicate [a]
 any_satisfy :: Predicate a -> Predicate [a]
 chain :: (a -> [b]) -> [a] -> [b]
-concat :: [a] -> [a] -> [a]
+concat :: Operation [a]
 cons :: a -> [a] -> [a]
 contains :: a -> Predicate [a]
 contains_with :: Relation a -> a -> Predicate [a]
@@ -41,16 +49,16 @@ reduce :: (a -> b -> b) -> a -> [b] -> a
 Math
 
 ```
-add :: Number -> Number -> Number
+add :: Operation Number
 dec :: Number -> Number
-divide :: Number -> Number -> Number
+divide :: Operation Number
 inc :: Number -> Number
 mean :: [Number] -> Number
-modulo :: Number -> Number -> Number
-multiply :: Number -> Number -> Number
+modulo :: Operation Number
+multiply :: Operation Number
 negate :: Number -> Number
 product :: [Number] -> Number
-subtract :: Number -> Number -> Number
+subtract :: Operation Number
 sum :: [Number] -> Number
 ```
 
@@ -61,11 +69,4 @@ equal :: a -> b -> Boolean
 getattr :: attr : String -> Object { attr :: a | * } -> a
 getitem :: key : k -> Collection { key :: v | * } -> v
 isinstance :: Class -> Predicate a
-```
-
-Type Synonyms
-
-```
-Predicate a = a -> Boolean
-Relation a = a -> a -> Boolean
 ```
