@@ -20,6 +20,7 @@ Type Synonyms
 Predicate a = a -> Boolean
 Relation a = a -> a -> Boolean
 Operation a = a -> a -> a
+Reduction a = [a] -> a
 ```
 
 Dictionary
@@ -53,7 +54,7 @@ contains :: a -> Predicate [a]
 contains_with :: Relation a -> a -> Predicate [a]
 drop :: Number -> [a] -> [a]
 filter :: Predicate a -> [a] -> [a]
-find :: Predicate a -> [a] -> a
+find :: Predicate a -> Reduction a
 map :: (a -> b) -> [a] -> [b]
 reduce :: (a -> b -> b) -> a -> [b] -> a
 take :: Number -> [a] -> [a]
@@ -62,9 +63,9 @@ take :: Number -> [a] -> [a]
 Logic
 
 ```
-all_pass :: [Predicate a] -> Predicate a
+all_pass :: Reduction (Predicate a)
 and_func :: Operation Boolean
-any_pass :: [Predicate a] -> Predicate a
+any_pass :: Reduction (Predicate a)
 both :: Operation (Predicate a)
 complement :: Predicate a -> Predicate a
 either :: Operation (Predicate a)
@@ -80,13 +81,13 @@ add :: Operation Number
 dec :: Number -> Number
 divide :: Operation Number
 inc :: Number -> Number
-mean :: [Number] -> Number
+mean :: Reduction Number
 modulo :: Operation Number
 multiply :: Operation Number
 negate :: Number -> Number
-product :: [Number] -> Number
+product :: Reduction Number
 subtract :: Operation Number
-sum :: [Number] -> Number
+sum :: Reduction Number
 ```
 
 Relation
