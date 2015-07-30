@@ -27,6 +27,7 @@ Dictionary
 
 ```
 getitem :: key : a -> Dictionary { key :: b | * } -> b
+item_path :: (key : a ...) -> Dictionary { key :: Dictionary { ... :: b } | * } -> b
 keys :: Dictionary a b -> [a]
 map_dict :: (b -> c) -> Dictionary a b -> Dictionary a c
 pick :: [a] -> Dictionary a b -> Dictionary a b
