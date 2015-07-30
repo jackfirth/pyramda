@@ -32,6 +32,7 @@ concat :: [a] -> [a] -> [a]
 cons :: a -> [a] -> [a]
 contains :: a -> Predicate [a]
 contains_with :: Relation a -> a -> Predicate [a]
+drop :: Number -> [a] -> [a]
 filter :: Predicate a -> [a] -> [a]
 map :: (a -> b) -> [a] -> [b]
 reduce :: (a -> b -> b) -> a -> [b] -> a

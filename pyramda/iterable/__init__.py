@@ -5,6 +5,7 @@ from .concat import concat
 from .cons import cons
 from .contains import contains
 from .contains_with import contains_with
+from .drop import drop
 from .filter import filter
 from .map import map
 from .reduce import reduce
