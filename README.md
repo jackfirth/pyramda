@@ -101,6 +101,8 @@ gte :: Ord a => Relation a
 identical :: Relation a
 lt :: Ord a => Relation a
 lte :: Ord a => Relation a
+max :: Ord a => Reduction a
+min :: Ord a => Reduction a
 ```
 
 Other
