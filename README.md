@@ -59,6 +59,14 @@ reduce :: (a -> b -> b) -> a -> [b] -> a
 take :: Number -> [a] -> [a]
 ```
 
+Logic
+
+```
+both :: Operation (Predicate a)
+complement :: Predicate a -> Predicate a
+either :: Operation (Predicate a)
+```
+
 Math
 
 ```
