@@ -1,5 +1,5 @@
-# pamda [![Build Status](https://travis-ci.org/jackfirth/pamda.svg)](https://travis-ci.org/jackfirth/pamda)
-Python package supporting heavy functional programming through currying
+# pyramda
+Python package supporting heavy functional programming through currying and function composition. Translation of the Ramda library from javascript to python.
 
 ```python
 >>> from pamda import map
