@@ -28,6 +28,7 @@ Function
 apply :: (a -> ... -> z) -> (a, ...) -> z
 compose :: (y -> z) ... (a -> b) -> a -> z
 curry :: (a b ... -> z) -> a -> b -> ... -> z
+identity :: a -> a
 ```
 
 Iterable
