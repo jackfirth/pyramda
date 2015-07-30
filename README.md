@@ -14,15 +14,44 @@ Python package supporting heavy functional programming through currying and func
 
 ### Provided functions
 
+Function
+
 ```
-add :: Number -> Number -> Number
+apply :: (a -> ... -> z) -> (a, ...) -> z
 compose :: (y -> z) ... (a -> b) -> a -> z
 curry :: (a b ... -> z) -> a -> b -> ... -> z
-equal :: a -> b -> Boolean
-filter :: (a -> Boolean) -> [a] -> [a]
-getattr :: attr : String -> Object { attr :: a | * } -> a
-getitem :: key : k -> Collection { key :: v | * } -> v
-isinstance :: Class -> a -> Boolean
+```
+
+Iterable
+
+```
+all_satisfy :: Predicate a -> [a] -> Boolean
+filter :: Predicate a -> [a] -> [a]
 map :: (a -> b) -> [a] -> [b]
 reduce :: (a -> b -> b) -> a -> [b] -> a
+```
+
+Math
+
+```
+add :: Number -> Number -> Number
+dec :: Number -> Number
+divide :: Number -> Number -> Number
+inc :: Number -> Number
+mean :: [Number] -> Number
+modulo :: Number -> Number -> Number
+multiply :: Number -> Number -> Number
+negate :: Number -> Number
+product :: [Number] -> Number
+subtract :: Number -> Number -> Number
+sum :: [Number] -> Number
+```
+
+Other
+
+```
+equal :: a -> b -> Boolean
+getattr :: attr : String -> Object { attr :: a | * } -> a
+getitem :: key : k -> Collection { key :: v | * } -> v
+isinstance :: Class -> Predicate a
 ```
