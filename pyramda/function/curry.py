@@ -1,5 +1,5 @@
 from functools import wraps, partial
-from .private.curry_spec import \
+from pyramda.private.curry_spec import \
     CurrySpec, \
     ArgValues, \
     make_func_curry_spec, \

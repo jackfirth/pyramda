@@ -1,4 +1,4 @@
-from .curry import curry
+from pyramda.function.curry import curry
 from functools import reduce as uncurried_reduce
 
 

@@ -1,7 +1,6 @@
+from .function import *
+
 from .add import add
-from .apply import apply
-from .compose import compose
-from .curry import curry
 from .equal import equal
 from .filter import filter
 from .getattr import getattr

@@ -1,5 +1,5 @@
 from .compose import compose
-from .private.asserts import assert_equal
+from pyramda.private.asserts import assert_equal
 
 
 def add10(x):
