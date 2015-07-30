@@ -3,6 +3,7 @@ from .any_satisfy import any_satisfy
 from .chain import chain
 from .concat import concat
 from .cons import cons
+from .contains import contains
 from .contains_with import contains_with
 from .filter import filter
 from .map import map
