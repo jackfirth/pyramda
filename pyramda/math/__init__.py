@@ -5,3 +5,4 @@ from .inc import inc
 from .mean import mean
 from .modulo import modulo
 from .multiply import multiply
+from .negate import negate
