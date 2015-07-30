@@ -1,5 +1,5 @@
 from .filter import filter
-from .private.asserts import assert_iterables_equal
+from pyramda.private.asserts import assert_iterables_equal
 
 
 def positive(x):

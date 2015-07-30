@@ -1,5 +1,5 @@
 from .reduce import reduce
-from .private.asserts import assert_equal
+from pyramda.private.asserts import assert_equal
 
 
 def string_append(s1, s2):

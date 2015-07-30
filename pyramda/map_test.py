@@ -1,5 +1,5 @@
 from .map import map
-from .private.asserts import assert_iterables_equal
+from pyramda.private.asserts import assert_iterables_equal
 
 
 def add1(x):

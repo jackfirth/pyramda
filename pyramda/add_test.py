@@ -1,5 +1,5 @@
 from .add import add
-from .private.asserts import assert_equal
+from pyramda.private.asserts import assert_equal
 
 
 def add_nocurry_test():

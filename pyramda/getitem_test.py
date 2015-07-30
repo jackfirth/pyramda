@@ -1,5 +1,5 @@
 from .getitem import getitem
-from .private.asserts import assert_equal
+from pyramda.private.asserts import assert_equal
 
 
 def getitem_nocurry_item():

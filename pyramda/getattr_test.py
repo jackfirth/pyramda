@@ -1,5 +1,5 @@
 from .getattr import getattr
-from .private.asserts import assert_equal
+from pyramda.private.asserts import assert_equal
 
 
 class TestObject:
