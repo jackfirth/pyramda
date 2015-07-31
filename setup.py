@@ -8,4 +8,5 @@ setup(name='pyramda',
       author='Jack Firth',
       author_email='jackhfirth@gmail.com',
       packages=['pyramda'],
+      tests_require=['nose', 'coverage'],
       zip_safe=False)
