@@ -1,12 +1,13 @@
 from setuptools import setup
-from setuptools.command.install import install
+from setuptools.command.build_py import build_py
 from subprocess import call
 
 
-class PastuerizeInstallCommand(install):
+class PastuerizeBuildCommand(build_py):
     def run(self):
+        call(["pip", "install", "future"])
         call(["pasteurize", "./pyramda"])
-        install.run(self)
+        build_py.run(self)
 
 
 setup(
@@ -30,7 +31,7 @@ setup(
     install_requires=['future'],
     tests_require=['nose', 'coverage'],
     cmdclass={
-        'install': PastuerizeInstallCommand,
+        'build_py': PastuerizeBuildCommand
     },
     zip_safe=False
 )
