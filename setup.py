@@ -1,4 +1,12 @@
 from setuptools import setup
+from setuptools.command.install import install
+from subprocess import call
+
+
+class PastuerizeInstallCommand(install):
+    def run(self):
+        call(["pasteurize", "./pyramda"])
+        install.run(self)
 
 
 setup(
@@ -19,6 +27,10 @@ setup(
         'pyramda.private.curry_spec',
         'pyramda.relation'
     ],
+    install_requires=['future'],
     tests_require=['nose', 'coverage'],
+    cmdclass={
+        'install': PastuerizeInstallCommand,
+    },
     zip_safe=False
 )

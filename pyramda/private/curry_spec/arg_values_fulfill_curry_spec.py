@@ -9,7 +9,7 @@ from .check_arg_values_valid import check_arg_values_valid
 
 
 def has_extra_kwargs(curry_spec, kwargs):
-    return len(kwargs.keys() - curry_spec.arg_names) > 0
+    return len(set(kwargs.keys()) - set(curry_spec.arg_names)) > 0
 
 
 def arg_values_fulfill_curry_spec(curry_spec, arg_values):

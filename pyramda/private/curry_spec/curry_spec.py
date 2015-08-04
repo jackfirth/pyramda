@@ -21,4 +21,4 @@ def num_curry_spec_default_args(curry_spec):
 
 
 def num_default_overriding_args(curry_spec, arg_values):
-    return len(curry_spec.arg_defaults.keys() & arg_values.kwargs.keys())
+    return len(set(curry_spec.arg_defaults.keys()) & set(arg_values.kwargs.keys()))
