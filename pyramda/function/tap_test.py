@@ -3,11 +3,10 @@ from pyramda.private.asserts import assert_equal
 
 
 def tap_test():
-    called = False
+    called_box = [False]
 
     def set_called(v):
-        nonlocal called
-        called = True
+        called_box[0] = True
 
     assert_equal(tap(set_called, 42), 42)
-    assert called
+    assert called_box[0]
