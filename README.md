@@ -2,6 +2,10 @@
 
 Python package supporting heavy functional programming through currying and function composition. Translation of the Ramda library from javascript to python. Supports Python 2.6, 2.7, 3.2, 3.3, and 3.4.
 
+```
+pip install pyramda
+```
+
 ```python
 >>> from pyramda import map, inc
 >>> inc(1)
