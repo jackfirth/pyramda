@@ -10,7 +10,7 @@ pip install pyramda
 >>> from pyramda import map, inc
 >>> inc(1)
 2
->>> map(inc, [1, 2, 3]
+>>> map(inc, [1, 2, 3])
 [2, 3, 4]
 >>> incEach = map(inc)
 >>> incEach([1, 2, 3])
