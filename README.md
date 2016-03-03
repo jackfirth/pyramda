@@ -1,6 +1,6 @@
 # pyramda [![Build Status](https://travis-ci.org/jackfirth/pyramda.svg?branch=master)](https://travis-ci.org/jackfirth/pyramda) [![Coverage Status](https://coveralls.io/repos/jackfirth/pyramda/badge.svg?branch=master&service=github)](https://coveralls.io/github/jackfirth/pyramda?branch=master)
 
-Python package supporting heavy functional programming through currying and function composition. Translation of the Ramda library from javascript to python. Supports Python 2.6, 2.7, 3.2, 3.3, and 3.4.
+Python package supporting heavy functional programming through currying and function composition. Translation of the Ramda library from javascript to python. Supports Python 2.6, 2.7, 3.3, 3.4, and 3.5.
 
 ```
 pip install pyramda
