@@ -1,5 +1,3 @@
-
-
 from pyramda.function.curry import curry
 from . import map
 
