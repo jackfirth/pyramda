@@ -1,4 +1,3 @@
-
 try:
     # Python 3
     from unittest import mock
@@ -7,10 +6,6 @@ except ImportError:
     import mock
 
 from .for_each import for_each
-
-
-def print_x_plus_5(x):
-    print(x + 5)
 
 
 def test_for_each_nocurry_returns_the_original_iterable():
