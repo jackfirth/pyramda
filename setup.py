@@ -29,7 +29,7 @@ setup(
         'pyramda.relation'
     ],
     install_requires=['future'],
-    tests_require=['nose', 'coverage'],
+    tests_require=['nose', 'coverage', 'mock'],
     cmdclass={
         'build_py': PasteurizeBuildCommand
     },
