@@ -17,10 +17,21 @@ def flatten(xs, depth):
 
     def _flatten(x, d):
         for item in x:
-            if isinstance(item, Iterable) and not isinstance(item, basestring) and (d is None or d >= 1):
+            if isinstance(
+                    item, Iterable) and not isinstance(
+                    item, basestring) and (
+                    d is None or d >= 1):
                 for i in flatten(item, d - 1 if d else None):
                     yield i
             else:
                 yield item
 
-    return list(_flatten(xs, depth)) if (isinstance(xs, Iterable) and not isinstance(xs, basestring)) else xs
+    return list(
+        _flatten(
+            xs,
+            depth)) if (
+        isinstance(
+            xs,
+            Iterable) and not isinstance(
+            xs,
+            basestring)) else xs
