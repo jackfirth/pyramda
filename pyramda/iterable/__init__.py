@@ -12,3 +12,4 @@ from .map import map
 from .reduce import reduce
 from .take import take
 from .for_each import for_each
+from .flatten import flatten
