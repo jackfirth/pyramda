@@ -3,12 +3,12 @@ from . import filter
 
 
 @curry
-def reject(f, xs):
+def reject(p, xs):
     """
-    Acts as a compliment of `filter`
+    Acts as a complement  of `filter`
 
-    :param f: function
+    :param p: predicate
     :param xs: Iterable. A sequence, a container which supports iteration or an iterator
     :return: list
     """
-    return list(set(xs) - set(filter(f, xs)))
+    return list(set(xs) - set(filter(p, xs)))
