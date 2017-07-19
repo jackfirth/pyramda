@@ -1,4 +1,5 @@
 from pyramda.function.curry import curry
+from pyramda.logic import complement
 from . import filter
 
 
@@ -11,4 +12,4 @@ def reject(p, xs):
     :param xs: Iterable. A sequence, a container which supports iteration or an iterator
     :return: list
     """
-    return list(set(xs) - set(filter(p, xs)))
+    return filter(complement(p), xs)
