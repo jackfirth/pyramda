@@ -1,37 +1,30 @@
 from collections import Iterable
 from past.builtins import basestring
 
+from pyramda.isinstance import isinstance
 from pyramda.function.curry import curry
 
 
 @curry
-def flatten(xs, depth):
+def flatten_until(is_leaf, xs):
     """
     Flatten a nested  sequence. A sequence could be a nested list of lists
     or tuples or a combination of both
 
+    :param is_leaf: Predicate. Predicate to  determine whether an item
+                    in the iterable `xs` is a leaf node or not.
     :param xs: Iterable. Nested lists or tuples
-    :param depth: int or None. Recursion depth.
     :return: list.
     """
 
-    def _flatten(x, d):
-        for item in x:
-            if isinstance(
-                    item, Iterable) and not isinstance(
-                    item, basestring) and (
-                    d is None or d >= 1):
-                for i in flatten(item, d - 1 if d else None):
+    def _flatten_until(items):
+        for item in items:
+            if isinstance(Iterable, item) and not is_leaf(item):
+                for i in _flatten_until(item):
                     yield i
             else:
                 yield item
 
-    return list(
-        _flatten(
-            xs,
-            depth)) if (
-        isinstance(
-            xs,
-            Iterable) and not isinstance(
-            xs,
-            basestring)) else xs
+    return list(_flatten_until(xs)) if isinstance(Iterable, xs) and not is_leaf(xs) else xs
+
+flatten = flatten_until(isinstance(basestring))
