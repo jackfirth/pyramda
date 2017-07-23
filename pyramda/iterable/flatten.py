@@ -18,13 +18,13 @@ def flatten_until(is_leaf, xs):
     """
 
     def _flatten_until(items):
-        for item in items:
-            if isinstance(Iterable, item) and not is_leaf(item):
+        if isinstance(Iterable, items) and not is_leaf(items):
+            for item in items:
                 for i in _flatten_until(item):
                     yield i
-            else:
-                yield item
+        else:
+            yield items
 
-    return list(_flatten_until(xs)) if isinstance(Iterable, xs) and not is_leaf(xs) else xs
+    return list(_flatten_until(xs))
 
 flatten = flatten_until(isinstance(basestring))
