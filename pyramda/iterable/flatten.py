@@ -1,5 +1,4 @@
 from collections import Iterable
-from past.builtins import basestring
 
 from pyramda.isinstance import isinstance
 from pyramda.function.curry import curry
