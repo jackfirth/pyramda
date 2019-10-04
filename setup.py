@@ -19,7 +19,6 @@ setup(
         'pyramda.private.curry_spec',
         'pyramda.relation'
     ],
-    install_requires=['future'],
     tests_require=['nose', 'coverage', 'mock'],
     zip_safe=False
 )
