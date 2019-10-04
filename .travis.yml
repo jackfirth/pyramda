@@ -1,12 +1,18 @@
 language: python
 python:
-  - "3.3"
   - "3.4"
   - "3.5"
+  - "3.6"
+  - "3.7"
+  - "3.7-dev"
+  - "3.8-dev"
+  - "nightly"
+#command to install dependencies:    
 install:
   - python setup.py install
   - pip install coveralls
   - pip install pep8
+#command to run tests
 script:
   - pep8 --max-line-length 100 pyramda
   - python setup.py nosetests
