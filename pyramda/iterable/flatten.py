@@ -1,5 +1,4 @@
 from collections import Iterable
-
 from pyramda.isinstance import isinstance
 from pyramda.function.curry import curry
 
@@ -26,4 +25,4 @@ def flatten_until(is_leaf, xs):
 
     return list(_flatten_until(xs))
 
-flatten = flatten_until(isinstance(basestring))
+flatten = flatten_until(isinstance(string_types))
