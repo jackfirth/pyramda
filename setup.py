@@ -1,5 +1,4 @@
 from setuptools import setup
-from subprocess import call
 
 setup(
     name='pyramda',
